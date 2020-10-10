@@ -24,6 +24,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     margin-top: 100px;
+    grid-gap: 10px;
 }
 
 .header {
@@ -52,4 +53,22 @@
     opacity: 0.3;
     z-index: -999;
     pointer-events: none;
+}
+
+.seleCount {
+    padding: 20px; border: 1px solid black;
+}
+
+.seleCount i {
+    cursor: pointer;
+    color: rgba(220, 20, 60, 0.603);
+}
+.seleCount p {
+    font-weight: bold;
+    font-size:20px;
+}
+
+ul {
+    list-style: none;
+    font-size: 20px;
 }

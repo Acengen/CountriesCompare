@@ -81,4 +81,6 @@ export class DashboardPageComponent implements OnInit {
   ResetForm() {
     window.location.reload();
   }
+
+ 
 }
