@@ -24,7 +24,7 @@
         <!-- for UX and UI :D -->
         <p style="margin-bottom: 0px;">*Added: <span>{{countriesCounter}}</span> countries</p>
         <p *ngIf="selectedCountries.length > 3" style="color: rgba(220, 20, 60, 0.548);">*Thats a maximum number of countries you can add</p>
-        <p *ngIf="selectedCountries.length <= 1">*Add at least 2 counties to compare</p>
+        <p *ngIf="selectedCountries.length <= 1">*Add at least 2 countries to compare</p>
         <!--  -->
         <button [disabled]="selectedCountries.length <=1" type="submit" class="btn btn-dark my-3">COMPARE</button>
         <button *ngIf="selectedCountries.length >= 2" class="btn btn-danger my-3" type="button" (click)="ResetForm()">RESET</button>

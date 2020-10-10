@@ -10,7 +10,6 @@ import { NgForm } from '@angular/forms';
 export class DashboardPageComponent implements OnInit {
   countries =[];
   selectedCountries = [];
-  itemsCopy = [];
   NameOfTheMostPop ="";
   NameofTheLeastPop = "";
   MostHb:any = "";
@@ -39,7 +38,6 @@ export class DashboardPageComponent implements OnInit {
       if(this.selectedCountries.length > 4){
         return;
       }
-      console.log(this.selectedCountries);
   }
 
   onSubmit(form: NgForm) {
