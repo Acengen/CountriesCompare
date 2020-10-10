@@ -1,0 +1,21 @@
+.country-comp {
+    margin-top: 50px;
+}
+
+
+.country-comp form {
+    max-width: 500px;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding: 30px;
+}
+.country-comp form input {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+form button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+}

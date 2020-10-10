@@ -1,0 +1,10 @@
+<div class="country-comp">
+    <p style="color: grey;font-weight: bold;text-align: center;">COUNTRY COMPARISON</p>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <input class="form-control" type="text" name="username" placeholder="username" #username="ngModel" ngModel required pattern="admin">
+        <p style="color: rgba(220, 20, 60, 0.699);" *ngIf="!username.valid && username.touched">*Admin only</p>
+        <input class="form-control" type="password" name="psw" placeholder="password" #psw="ngModel" ngModel required pattern="admin">
+        <p style="color: rgba(220, 20, 60, 0.692);" *ngIf="!psw.valid && psw.touched">*Admin only</p>
+        <button [disabled]="!form.valid" type="submit">Login</button>
+    </form>
+</div>

@@ -1,0 +1,55 @@
+.countries {
+    height: 300px;
+    overflow: scroll;
+    padding: 20px;
+}
+.countries p {
+    cursor: pointer;
+    padding: 5px;
+}
+.countries p:hover {
+    background-color: grey;
+    color: white;
+}
+.selected-counties {
+    padding: 20px;
+}
+.selected-counties span {
+    font-weight: bold;
+}
+.selected-counties p {
+    margin-top: 30px;
+}
+.countries-to-compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    margin-top: 100px;
+}
+
+.header {
+    margin: 30px;
+}
+
+.countrylistp {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.countries-to-compare form input[type=text] {
+    border-radius: 20px;
+    color: rgba(128, 128, 128, 0.356);
+    padding: 4px 10px;
+    background-image: url("../../assets/search-icon-transparent-background-29.jpg");
+    background-position: 10px 10px; 
+  background-repeat: no-repeat;
+}
+
+.countries input {
+    margin-right: 5px;
+}
+
+.isactive {
+    opacity: 0.3;
+    z-index: -999;
+    pointer-events: none;
+}
