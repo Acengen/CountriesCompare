@@ -1,5 +1,5 @@
 import { MyServiceService } from './../my-service.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -18,6 +18,7 @@ export class DashboardPageComponent implements OnInit {
   DifferanceInPop:any = 0;
   @Input() search='';
   countriesCounter = 0;
+  
 
   constructor(private service: MyServiceService) { }
 
@@ -32,14 +33,26 @@ export class DashboardPageComponent implements OnInit {
     )
   }
 
-  addCountry(name:string, pop:string) {
-      this.selectedCountries.push({Name: name, Population: pop});
-      this.countriesCounter++;
-      if(this.selectedCountries.length > 4){
-        return;
-      }
-  }
+  selectOrNot(value, status:boolean) {
+    console.log(this.selectedCountries.indexOf(value))
+    if(this.selectedCountries.indexOf(value) === -1 && status){
+       this.selectedCountries.push(value);
+    }else if(!status){
+      let index = this.selectedCountries.indexOf(value);
+      this.selectedCountries.splice(index,1);
+    }
+   
 
+
+    for(let key in this.selectedCountries){
+      if(this.selectedCountries[key].Name == name){
+        return null;
+      }
+    }
+     
+     
+  }
+  
   onSubmit(form: NgForm) {
     //1.Sorting countries from most hab to least hab
     //2.Pushing that countries in sortedCountries Array
@@ -47,6 +60,7 @@ export class DashboardPageComponent implements OnInit {
     //4.I extract last item in the array because that item is with lower populations
 
       //1.)
+
      let sorted = this.selectedCountries.sort((a,b) => {
          return b.Population - a.Population
      });
@@ -64,6 +78,7 @@ export class DashboardPageComponent implements OnInit {
       this.LeastHb = this.selectedCountries[this.selectedCountries.length - 1].Population;
       this.NameofTheLeastPop = this.selectedCountries[this.selectedCountries.length - 1].Name;     
       this.DifferanceInPop = this.MostHb - this.LeastHb;
+      console.log(this.selectedCountries)
   }
 
   //for searching using a filter method with localelowercase

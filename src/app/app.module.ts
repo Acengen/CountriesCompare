@@ -12,7 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {path:"", redirectTo:"/form-page", pathMatch:"full"},
     {path: "form-page", component:FormPageComponent},
-    {path: "dashboard", component:DashboardPageComponent, canActivate:[DashboardGuardGuard]}
+    {path: "dashboard", component:DashboardPageComponent,}
 ]
 
 @NgModule({
